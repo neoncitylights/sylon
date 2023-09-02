@@ -62,7 +62,7 @@
 		"@vitest/coverage-v8": "^0.34.3",
 		"@vitest/ui": "^0.34.3",
 		"eslint": "8.48.0",
-		"gh-pages": "5.0.0",
+		"gh-pages": "6.0.0",
 		"typedoc": "0.25.0",
 		"typescript": "5.2.2",
 		"vite": "^4.4.9",
