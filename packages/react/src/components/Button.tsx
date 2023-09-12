@@ -12,13 +12,11 @@ export const Button = ({
 	kind,
 	...props
 }: ButtonProps) => {
-	const cssClasses = twMerge(
-		"flex flex-row gap-2 px-4 py-2 border border-gray-200 rounded-md",
-		className
-	);
-
 	return (
-		<button className={cssClasses} {...props}>
+		<button className={twMerge(
+			"flex flex-row gap-2 px-4 py-2 border border-gray-200 rounded-md",
+			className
+		)} {...props}>
 			{children}
 		</button>
 	);
