@@ -17,7 +17,7 @@ export const Checkbox = ({
 	ariaLabel,
 	description,
 	ariaDescription = '',
-	inputProps: checkProps,
+	inputProps,
 	...props
 }: CheckboxProps) => {
 	return (
@@ -28,7 +28,7 @@ export const Checkbox = ({
 				name={name}
 				aria-labelledby={ariaLabel}
 				aria-describedby={ariaDescription}
-				{...checkProps} />
+				{...inputProps} />
 			<label htmlFor={id}>
 				<span id={ariaLabel}>{label}</span>
 				{description && <span id={ariaDescription}>{description}</span>}
