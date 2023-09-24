@@ -4,3 +4,4 @@ docs/typedocs
 dist
 .history
 .idea
+.eslintcache
