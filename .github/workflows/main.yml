@@ -27,7 +27,7 @@ jobs:
         run: npm run build
         working-directory: packages/react
 
-  lint:
+  lint-es:
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -40,8 +40,24 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
-      - name: Lint
+      - name: Run ESLint
         run: npm run lint
+
+  lint-md:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run markdownlint
+        run: npm run lint:md
 
   # test:
   #   runs-on: ubuntu-latest
@@ -92,7 +108,8 @@ jobs:
     if: ${{ success() && github.event_name == 'push' }}
     needs:
       - build
-      - lint
+      - lint-es
+      - lint-md
       # - test
       # - docs
     steps:
@@ -104,7 +121,8 @@ jobs:
     if: ${{ success() && github.event_name == 'pull_request' }}
     needs:
       - build
-      - lint
+      - lint-es
+      - lint-md
       # - test
     steps:
       - name: ✅ CI succeeded
