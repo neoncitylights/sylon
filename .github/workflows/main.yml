@@ -25,6 +25,7 @@ jobs:
         run: npm ci
       - name: Build packages
         run: npm run build
+        working-directory: packages/react
 
   lint:
     runs-on: ubuntu-latest
