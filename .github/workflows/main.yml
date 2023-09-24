@@ -40,6 +40,9 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
+      - name: Print environment info
+        run: |
+          eslint --env-info
       - name: Run ESLint
         run: npm run lint
 
@@ -56,6 +59,11 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
+      - name: Print environment info
+        run: |
+          node --version
+          npm --version
+          markdownlint-cli2 --version
       - name: Run markdownlint
         run: npm run lint:md
 
