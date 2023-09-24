@@ -17,7 +17,8 @@ module.exports = {
 		'@typescript-eslint/eslint-plugin',
 	],
 	'ignorePatterns': [
-		'dist/**/*.ts',
+		'packages/**/dist/**/*.ts',
+		'packages/**/node_modules',
 	],
 	'rules': {
 		'@typescript-eslint/adjacent-overload-signatures': ['error'],

@@ -1,0 +1,61 @@
+{
+	// Place your snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field.
+	// If scope  is left empty or omitted, the snippet gets applied to all languages. The prefix is what is used
+	// to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// - $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	//
+	// Links
+	//  - https://code.visualstudio.com/docs/editor/userdefinedsnippets
+	//
+	// Example:
+	"Create Storybook": {
+		"scope": "typescriptreact",
+		"prefix": "new-storybook",
+		"description": "Create scaffolding for new storybook file",
+		"body": [
+			"import type { Meta, StoryObj } from '@storybook/react';",
+			"",
+			"import { $1 } from '../components/$2';",
+			"",
+			"// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction",
+			"const meta: Meta<typeof $1> = {",
+			"\ttitle: 'Components/$1',",
+			"\tcomponent: $1,",
+			"\ttags: ['autodocs'],",
+			"};",
+			"",
+			"export default meta;",
+			"type Story = StoryObj<typeof $1>",
+			"",
+			"// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args",
+			"export const Primary: Story = {",
+			"\targs: {$0},",
+			"};"
+		],
+	},
+	"Create Storybook story": {
+		"scope": "typescriptreact",
+		"prefix": "new-story",
+		"description": "Create scaffolding for a single Storybook story",
+		"body": [
+			"export const $1: Story = {",
+			"\targs: {$0}",
+			"};"
+		]
+	},
+	"Create React component": {
+		"scope": "typescriptreact",
+		"prefix": "react-c",
+		"description": "Create scaffolding for a single React component",
+		"body": [
+			"import { $2 } from 'react-html-props';",
+			"",
+			"export type $1Props = $2 & {}",
+			"export const $1 = ({...props}: $2) => {",
+			"\treturn (<$3 {...props}></$3>)",
+			"}"
+		]
+	}
+}
