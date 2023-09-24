@@ -42,7 +42,7 @@ jobs:
         run: npm ci
       - name: Print environment info
         run: |
-          eslint --env-info
+          npx eslint --env-info
       - name: Run ESLint
         run: npm run lint
 
@@ -63,7 +63,7 @@ jobs:
         run: |
           node --version
           npm --version
-          markdownlint-cli2 --version
+          npx markdownlint-cli2 --version
       - name: Run markdownlint
         run: npm run lint:md
 
