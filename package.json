@@ -5,9 +5,12 @@
 		"packages/**"
 	],
 	"scripts": {
-		"lint": "eslint --ext .js,.jsx,.ts,.tsx packages/react",
-		"lint:fix": "npm run lint -- --fix",
-		"lint:md": "markdownlint-cli2 '**/*.md' \"#node_modules\""
+		"lint": "npm run lint:es && npm run lint:md",
+		"lint:fix": "npm run lint:es-fix && npm run lint:md-fix",
+		"lint:es": "eslint --ext .js,.jsx,.ts,.tsx packages/react",
+		"lint:es-fix": "npm run lint -- --fix",
+		"lint:md": "markdownlint-cli2 '**/*.md' \"#node_modules\"",
+		"lint:md-fix": "npm run lint:md -- --fix"
 	},
 	"devDependencies": {
 		"@vitest/coverage-v8": "^0.34.3",
