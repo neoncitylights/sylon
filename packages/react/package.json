@@ -24,6 +24,7 @@
 	"scripts": {
 		"build": "vite build",
 		"storybook": "storybook dev -p 6006",
+		"storybook-upgrade": "npx storybook@latest upgrade",
 		"build-storybook": "storybook build"
 	},
 	"dependencies": {
