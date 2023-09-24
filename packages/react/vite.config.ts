@@ -7,10 +7,10 @@ export default defineConfig({
 		lib: {
 			entry: path.resolve(__dirname, 'src/index.ts'),
 			name: 'sylon',
-			fileName: (format) => `sylon.${format}.js`
-		}
+			fileName: (format) => `sylon.${format}.js`,
+		},
 	},
 	plugins: [
-		dts()
-	]
+		dts(),
+	],
 });

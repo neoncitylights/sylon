@@ -10,7 +10,7 @@ const meta: Meta<typeof Dropdown> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Dropdown>
+type Story = StoryObj<typeof Dropdown>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
@@ -18,17 +18,17 @@ export const Primary: Story = {
 		children: <>
 			<DropdownItem>
 						Item 1
-						<DropdownItemKbd>
-							<IconCommand width={12} height={12} />F
-						</DropdownItemKbd>
-					</DropdownItem>
-					<DropdownItem>
+				<DropdownItemKbd>
+					<IconCommand width={12} height={12} />F
+				</DropdownItemKbd>
+			</DropdownItem>
+			<DropdownItem>
 						Item 2
-						<DropdownItemKbd>
-							<IconCommand width={12} height={12} />G
-						</DropdownItemKbd>
-					</DropdownItem>
-					<DropdownItem>Item 3</DropdownItem>
-		</>
+				<DropdownItemKbd>
+					<IconCommand width={12} height={12} />G
+				</DropdownItemKbd>
+			</DropdownItem>
+			<DropdownItem>Item 3</DropdownItem>
+		</>,
 	},
 };

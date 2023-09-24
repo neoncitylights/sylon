@@ -1,9 +1,11 @@
-import { ButtonProps as HtmlButtonProps } from "react-html-props";
-import { twMerge } from "tailwind-merge";
+/* eslint @typescript-eslint/no-unused-vars: 0 */
 
-export type ButtonKind = ButtonProps["kind"];
+import { ButtonProps as HtmlButtonProps } from 'react-html-props';
+import { twMerge } from 'tailwind-merge';
+
+export type ButtonKind = ButtonProps['kind'];
 export type ButtonProps = HtmlButtonProps & {
-	kind?: "primary" | "secondary";
+	kind?: 'primary' | 'secondary';
 };
 
 export const Button = ({
@@ -14,8 +16,8 @@ export const Button = ({
 }: ButtonProps) => {
 	return (
 		<button className={twMerge(
-			"flex flex-row gap-2 px-4 py-2 border border-gray-200 rounded-md",
-			className
+			'flex flex-row gap-2 px-4 py-2 border border-gray-200 rounded-md',
+			className,
 		)} {...props}>
 			{children}
 		</button>

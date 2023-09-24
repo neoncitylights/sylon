@@ -1,4 +1,4 @@
-import { DivProps, InputProps } from 'react-html-props'
+import { DivProps, InputProps } from 'react-html-props';
 
 export type RadioProps = DivProps & {
 	id: string,
@@ -8,7 +8,7 @@ export type RadioProps = DivProps & {
 	description?: string,
 	ariaDescription?: string,
 	inputProps?: InputProps,
-}
+};
 
 export const Radio = ({
 	id,
@@ -34,5 +34,5 @@ export const Radio = ({
 				{description && <span id={ariaDescription}>{description}</span>}
 			</label>
 		</div>
-	)
-}
+	);
+};

@@ -5,6 +5,8 @@
 		"packages/**"
 	],
 	"scripts": {
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx packages/react",
+		"lint:fix": "npm run lint -- --fix",
 		"lint:md": "markdownlint-cli2 '**/*.md' \"#node_modules\""
 	},
 	"devDependencies": {

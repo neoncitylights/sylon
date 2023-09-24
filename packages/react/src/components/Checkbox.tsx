@@ -1,4 +1,4 @@
-import { DivProps, InputProps } from 'react-html-props'
+import { DivProps, InputProps } from 'react-html-props';
 
 export type CheckboxProps = DivProps & {
 	id: string,
@@ -8,7 +8,7 @@ export type CheckboxProps = DivProps & {
 	description?: string,
 	ariaDescription?: string,
 	inputProps?: InputProps,
-}
+};
 
 export const Checkbox = ({
 	id,
@@ -34,5 +34,5 @@ export const Checkbox = ({
 				{description && <span id={ariaDescription}>{description}</span>}
 			</label>
 		</div>
-	)
-}
+	);
+};
