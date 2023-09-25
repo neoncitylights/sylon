@@ -8,7 +8,7 @@
 		"lint": "npm run lint:es && npm run lint:md",
 		"lint:fix": "npm run lint:es-fix && npm run lint:md-fix",
 		"lint:es": "eslint --ext .js,.jsx,.ts,.tsx packages/react",
-		"lint:es-fix": "npm run lint -- --fix",
+		"lint:es-fix": "npm run lint:es -- --fix",
 		"lint:md": "markdownlint-cli2 '**/*.md' \"#node_modules\"",
 		"lint:md-fix": "npm run lint:md -- --fix"
 	},
