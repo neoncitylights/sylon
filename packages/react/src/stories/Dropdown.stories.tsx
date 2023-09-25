@@ -18,13 +18,13 @@ export const Primary: Story = {
 	args: {
 		children: <>
 			<DropdownItem>
-						Item 1
+				Item 1
 				<DropdownItemKbd>
 					<IconCommand width={12} height={12} />F
 				</DropdownItemKbd>
 			</DropdownItem>
 			<DropdownItem>
-						Item 2
+				Item 2
 				<DropdownItemKbd>
 					<IconCommand width={12} height={12} />G
 				</DropdownItemKbd>
