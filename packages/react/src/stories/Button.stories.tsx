@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { IconPlaceholder } from '@tabler/icons-react';
 
 import { Button } from '../components/';
 
@@ -13,23 +12,67 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
-	args: {
-		children: 'Button',
+export const AllButtons: Meta<typeof Button> = {
+	render: () =>
+		<div className='flex flex-col gap-2'>
+			<div className='flex flex-row gap-2'>
+				<Button kind='primary' intent='default'>Hello!</Button>
+				<Button kind='primary' intent='progressive'>Hello!</Button>
+				<Button kind='primary' intent='destructive'>Hello!</Button>
+			</div>
+			<div className='flex flex-row gap-2'>
+				<Button kind='normal' intent='default'>Hello!</Button>
+				<Button kind='normal' intent='progressive'>Hello!</Button>
+				<Button kind='normal' intent='destructive'>Hello!</Button>
+			</div>
+			<div className='flex flex-row gap-2'>
+				<Button kind='quiet' intent='default'>Hello!</Button>
+				<Button kind='quiet' intent='progressive'>Hello!</Button>
+				<Button kind='quiet' intent='destructive'>Hello!</Button>
+			</div>
+		</div>,
+	parameters: {
+		controls: {
+			exclude: ['kind', 'intent', 'isIconOnly'],
+		},
 	},
 };
 
-export const Secondary: Story = {
+export const PrimaryButton: Story = {
 	args: {
 		children: 'Button',
-		kind: 'secondary',
+		kind: 'primary',
+		intent: 'default',
+	},
+	parameters: {
+		controls: {
+			exclude: ['kind'],
+		},
 	},
 };
 
-export const IconButton: Story = {
+export const NormalButton: Story = {
 	args: {
-		children: <IconPlaceholder size={16} />,
-		isIconOnly: true,
+		children: 'Button',
+		kind: 'normal',
+		intent: 'default',
+	},
+	parameters: {
+		controls: {
+			exclude: ['kind'],
+		},
+	},
+};
+
+export const QuietButton: Story = {
+	args: {
+		children: 'Button',
+		kind: 'quiet',
+		intent: 'default',
+	},
+	parameters: {
+		controls: {
+			exclude: ['kind'],
+		},
 	},
 };
