@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { IconPlayerPauseFilled, IconPlayerPlayFilled } from '@tabler/icons-react';
 
 import { ToggleButton } from '../components/';
-import { IconPlayerPauseFilled, IconPlayerPlayFilled } from '@tabler/icons-react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof ToggleButton> = {
@@ -18,6 +18,6 @@ export const PlayButton: Story = {
 	args: {
 		isIconOnly: true,
 		contentOn: <IconPlayerPlayFilled size={16} />,
-		contentOff: <IconPlayerPauseFilled size={16} />
+		contentOff: <IconPlayerPauseFilled size={16} />,
 	},
 };

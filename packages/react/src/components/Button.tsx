@@ -24,7 +24,7 @@ export const Button = ({
 		kind === 'primary' && 'bg-slate-800 border-slate-800 text-white',
 		kind === 'secondary' && 'bg-white border-slate-200 text-slate-800',
 		className,
-	)
+	);
 
 	return (
 		<button type="button" className={styles} {...props}>
@@ -33,7 +33,7 @@ export const Button = ({
 	);
 };
 
-export type IconButtonProps = Omit<ButtonProps, 'isIconOnly'>
+export type IconButtonProps = Omit<ButtonProps, 'isIconOnly'>;
 export const IconButton = ({ children, ...props }: IconButtonProps) => {
 	return (
 		<Button isIconOnly {...props}>
@@ -45,9 +45,9 @@ export const IconButton = ({ children, ...props }: IconButtonProps) => {
 export type ToggleButtonProps = Omit<ButtonProps, 'children'> & {
 	contentOn: ReactNode,
 	contentOff: ReactNode,
-}
+};
 export const ToggleButton = ({ contentOn, contentOff, ...props }: ToggleButtonProps) => {
-	const [selected, setSelected] = useState(true)
+	const [selected, setSelected] = useState(true);
 
 	return (
 		<Button
@@ -60,5 +60,5 @@ export const ToggleButton = ({ contentOn, contentOff, ...props }: ToggleButtonPr
 				? contentOn
 				: contentOff}
 		</Button>
-	)
-}
+	);
+};
