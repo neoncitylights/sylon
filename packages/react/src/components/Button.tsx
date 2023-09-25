@@ -15,8 +15,8 @@ type DependentStyleMap<
 	Prop2 extends string,
 	T
 > = Record<Prop1, Record<Prop2 | 'shared', T>>;
-type ButtonKindIntentMap = DependentStyleMap<ButtonKind, ButtonIntent, string|string[]>;
 
+type ButtonKindIntentMap = DependentStyleMap<ButtonKind, ButtonIntent, string|string[]>;
 const kindIntentStyles: ButtonKindIntentMap = Object.freeze({
 	'primary': {
 		'shared': 'border text-white',
