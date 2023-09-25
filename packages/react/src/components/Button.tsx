@@ -53,7 +53,7 @@ export const Button = ({
 		'flex flex-row gap-2',
 		'rounded-md',
 		'text-base tracking-wide',
-		!isIconOnly ? 'px-4 py-2' : 'p-1',
+		!isIconOnly ? 'px-4 py-2' : 'p-2',
 		kindIntentStyles[kind]['shared'],
 		kindIntentStyles[kind][intent],
 		className,
