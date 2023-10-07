@@ -10,11 +10,11 @@ const meta: Meta<typeof Icon> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Icon>
+type Story = StoryObj<typeof Icon>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
 	args: {
-		name: '2fa'
+		name: '2fa',
 	},
 };
