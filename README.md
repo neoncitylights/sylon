@@ -1,8 +1,8 @@
 # sylon
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![GitHub deployments](https://img.shields.io/github/deployments/neoncitylights/node-ts-template/github-pages?label=deploy)](https://github.com/neoncitylights/node-ts-template/deployments/activity_log?environment=github-pages)
-[![Node.js workflow](https://github.com/neoncitylights/node-ts-template/actions/workflows/main.yml/badge.svg)](https://github.com/neoncitylights/node-ts-template/actions/workflows/main.yml)
+[![GitHub deployments](https://img.shields.io/github/deployments/neoncitylights/types/github-pages?label=deploy)](https://github.com/neoncitylights/types/deployments/activity_log?environment=github-pages)
+[![Node.js workflow](https://github.com/neoncitylights/types/actions/workflows/main.yml/badge.svg)](https://github.com/neoncitylights/types/actions/workflows/main.yml)
 
 A personal design system of web components. Currently a work-in-progress.
 
