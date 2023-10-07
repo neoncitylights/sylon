@@ -4,9 +4,11 @@ import { twMerge } from 'tailwind-merge';
 
 export type ButtonKind = NonNullable<ButtonProps['kind']>;
 export type ButtonIntent = NonNullable<ButtonProps['intent']>;
+export type ButtonSize = NonNullable<ButtonProps['size']>;
 export type ButtonProps = HtmlButtonProps & {
 	kind?: 'primary' | 'normal' | 'quiet',
 	intent?: 'progressive' | 'destructive' | 'default',
+	size?: 'sm' | 'md',
 	isIconOnly?: boolean,
 };
 
@@ -40,9 +42,24 @@ const kindIntentStyles: ButtonKindIntentMap = Object.freeze({
 	},
 });
 
+type PaddingStyleMap = DependentStyleMap<ButtonSize, 'isIcon'|'isNotIcon', string|string[]>;
+const paddingStyles: PaddingStyleMap = Object.freeze({
+	'sm': {
+		'shared': '',
+		'isIcon': 'px-3 py-1',
+		'isNotIcon': 'p-1',
+	},
+	'md': {
+		'shared': '',
+		'isIcon': 'px-4 py-2',
+		'isNotIcon': 'p-2',
+	},
+});
+
 export const Button = ({
 	children,
 	className,
+	size = 'md',
 	kind = 'primary',
 	intent = 'default',
 	isIconOnly = false,
@@ -53,7 +70,7 @@ export const Button = ({
 		'flex flex-row gap-2',
 		'rounded-md',
 		'text-base tracking-wide',
-		!isIconOnly ? 'px-4 py-2' : 'p-2',
+		paddingStyles[size][isIconOnly ? 'isIcon' : 'isNotIcon'],
 		kindIntentStyles[kind]['shared'],
 		kindIntentStyles[kind][intent],
 		className,
