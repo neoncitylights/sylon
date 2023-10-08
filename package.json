@@ -9,8 +9,10 @@
 		"lint:fix": "npm run lint:es-fix && npm run lint:md-fix",
 		"lint:es": "eslint --ext .js,.jsx,.ts,.tsx packages/react",
 		"lint:es-fix": "npm run lint:es -- --fix",
+		"lint:es-env": "eslint --env-info",
 		"lint:md": "markdownlint-cli2 '**/*.md' \"#node_modules\"",
-		"lint:md-fix": "npm run lint:md -- --fix"
+		"lint:md-fix": "npm run lint:md -- --fix",
+		"lint:md-env": "markdownlint-cli2 --version",
 	},
 	"devDependencies": {
 		"@vitest/coverage-v8": "^0.34.6",
