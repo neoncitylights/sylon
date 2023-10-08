@@ -38,12 +38,6 @@ jobs:
             npm-cmd-suffix: es
             env-cmd: |
               npm run lint:es-env
-          - tool: stylelint
-            npm-cmd-suffix: style
-            env-cmd: |
-              node --version
-              npm --version
-              npm run lint:style-env
           - tool: markdownlint
             npm-cmd-suffix: md
             env-cmd: |
