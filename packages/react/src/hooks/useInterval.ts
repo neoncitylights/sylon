@@ -5,5 +5,5 @@ export const useInterval = (callbackFn: () => void, milliseconds: number = 1000,
 	useEffect(() => {
 		const int = setInterval(callbackFn, milliseconds);
 		return () => clearInterval(int);
-	}, args)
-}
+	}, [callbackFn, milliseconds, ...args]); // eslint-disable-line react-hooks/exhaustive-deps
+};

@@ -5,5 +5,5 @@ export const useTimeout = (callbackFn: () => void, milliseconds: number = 1000, 
 	useEffect(() => {
 		const time = setTimeout(callbackFn, milliseconds);
 		return () => clearTimeout(time);
-	}, args)
-}
+	}, [callbackFn, milliseconds, ...args]); // eslint-disable-line react-hooks/exhaustive-deps
+};

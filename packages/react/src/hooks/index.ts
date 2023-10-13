@@ -1,3 +1,3 @@
-export * from './useAnimationFrame'
-export * from './useInterval'
-export * from './useTimeout'
+export * from './useAnimationFrame';
+export * from './useInterval';
+export * from './useTimeout';

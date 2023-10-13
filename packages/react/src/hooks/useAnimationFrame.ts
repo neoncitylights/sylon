@@ -5,5 +5,5 @@ export const useAnimationFrame = (callbackFn: FrameRequestCallback, args: any[] 
 	useEffect(() => {
 		const frame = requestAnimationFrame(callbackFn);
 		return () => cancelAnimationFrame(frame);
-	}, args)
-}
+	}, [callbackFn, ...args]); // eslint-disable-line react-hooks/exhaustive-deps
+};
