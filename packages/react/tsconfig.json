@@ -1,11 +1,21 @@
 {
 	"compilerOptions": {
+		"types": ["node", "react", "react-dom"],
+		"lib": ["es2022", "dom", "dom.iterable"],
+		"composite": true,
+		"declarationMap": true,
+
+		"baseUrl": "src",
+		"outDir": "dist",
+
 		"jsx": "react-jsx",
-		"module": "ES2022",
-		"moduleResolution": "node",
+
 		"target": "ES2022",
+		"module": "ES2022",
+		"moduleResolution": "Bundler",
 		"useDefineForClassFields": true,
 		"resolveJsonModule": false,
+		"noEmit": true,
 
 		"strict": true,
 		"allowUnusedLabels": false,
@@ -26,5 +36,13 @@
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true
-	}
+	},
+	"include": [
+		"src/"
+	],
+	"exclude": [
+		"dist",
+		"*.config.cjs",
+		"src/stories"
+	]
 }

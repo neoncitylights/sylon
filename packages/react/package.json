@@ -9,7 +9,6 @@
 		"url": "https://github.com/neoncitylights"
 	},
 	"type": "module",
-	"main": "dist/sylon.umd.js",
 	"module": "dist/sylon.es.js",
 	"types": "dist/src/index.d.ts",
 	"files": [
@@ -17,8 +16,8 @@
 	],
 	"exports": {
 		".": {
-			"import": "./dist/sylon.es.js",
-			"require": "./dist/sylon.umd.js"
+			"types": "./dist/src/index.d.ts",
+			"import": "./dist/sylon.es.js"
 		}
 	},
 	"scripts": {
