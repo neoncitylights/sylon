@@ -10,7 +10,7 @@
 		"lint:es": "eslint --ext .js,.jsx,.ts,.tsx packages/react",
 		"lint:es-fix": "npm run lint:es -- --fix",
 		"lint:es-env": "eslint --env-info",
-		"lint:md": "markdownlint-cli2 '**/*.md' \"#node_modules\"",
+		"lint:md": "markdownlint-cli2 '**/*.md'",
 		"lint:md-fix": "npm run lint:md -- --fix",
 		"lint:md-env": "markdownlint-cli2 --version"
 	},
