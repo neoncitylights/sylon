@@ -1,23 +1,29 @@
 {
 	"compilerOptions": {
+		/* base options */
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"verbatimModuleSyntax": true,
+		"moduleDetection": "force",
+
+		/* transpilation */
 		"types": ["node", "react", "react-dom"],
 		"lib": ["es2022", "dom", "dom.iterable"],
 		"composite": true,
 		"declarationMap": true,
-
 		"baseUrl": "src",
-		"outDir": "dist",
-
 		"jsx": "react-jsx",
-
 		"target": "ES2022",
 		"module": "ES2022",
 		"moduleResolution": "Bundler",
 		"useDefineForClassFields": true,
-		"resolveJsonModule": false,
 		"noEmit": true,
 
+		/* strictness */
 		"strict": true,
+		"forceConsistentCasingInFileNames": true,
 		"allowUnusedLabels": false,
 		"allowUnreachableCode": false,
 		"exactOptionalPropertyTypes": true,
@@ -29,13 +35,12 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 
+		/* interop constraints */
 		"isolatedModules": true,
 
+		/* JS support */
 		"checkJs": true,
 
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true
 	},
 	"include": [
 		"src/"
