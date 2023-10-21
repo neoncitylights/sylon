@@ -1,5 +1,5 @@
-import { ReactNode, useState } from 'react';
-import { ButtonProps as HtmlButtonProps } from 'react-html-props';
+import { type ReactNode, useState } from 'react';
+import { type ButtonProps as HtmlButtonProps } from 'react-html-props';
 import { twMerge } from 'tailwind-merge';
 
 export type ButtonKind = NonNullable<ButtonProps['kind']>;

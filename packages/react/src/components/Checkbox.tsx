@@ -1,4 +1,4 @@
-import { DivProps, InputProps } from 'react-html-props';
+import { type DivProps, type InputProps } from 'react-html-props';
 
 export type CheckboxProps = DivProps & {
 	id: string,

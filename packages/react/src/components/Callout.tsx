@@ -1,4 +1,4 @@
-import { DivProps } from 'react-html-props';
+import { type DivProps } from 'react-html-props';
 
 export type CalloutKind = CalloutProps['kind'];
 export type CalloutProps = DivProps & {

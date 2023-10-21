@@ -16,7 +16,7 @@
 		"baseUrl": "src",
 		"jsx": "react-jsx",
 		"target": "ES2022",
-		"module": "ES2022",
+		"module": "ESNext",
 		"moduleResolution": "Bundler",
 		"useDefineForClassFields": true,
 		"noEmit": true,
