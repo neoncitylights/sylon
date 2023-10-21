@@ -1,13 +1,29 @@
 {
 	"compilerOptions": {
-		"jsx": "react-jsx",
-		"module": "ES2022",
-		"moduleResolution": "node",
-		"target": "ES2022",
-		"useDefineForClassFields": true,
-		"resolveJsonModule": false,
+		/* base options */
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"verbatimModuleSyntax": true,
+		"moduleDetection": "force",
 
+		/* transpilation */
+		"types": ["node", "react", "react-dom"],
+		"lib": ["es2022", "dom", "dom.iterable"],
+		"composite": true,
+		"declarationMap": true,
+		"baseUrl": "src",
+		"jsx": "react-jsx",
+		"target": "ES2022",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"useDefineForClassFields": true,
+		"noEmit": true,
+
+		/* strictness */
 		"strict": true,
+		"forceConsistentCasingInFileNames": true,
 		"allowUnusedLabels": false,
 		"allowUnreachableCode": false,
 		"exactOptionalPropertyTypes": true,
@@ -19,12 +35,19 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 
+		/* interop constraints */
 		"isolatedModules": true,
 
+		/* JS support */
 		"checkJs": true,
 
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true
-	}
+	},
+	"include": [
+		"src/"
+	],
+	"exclude": [
+		"dist",
+		"*.config.cjs",
+		"src/stories"
+	]
 }

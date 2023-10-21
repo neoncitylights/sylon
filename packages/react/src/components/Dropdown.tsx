@@ -1,4 +1,4 @@
-import { H2Props, LIProps, NavProps, SpanProps } from 'react-html-props';
+import type { H2Props, LIProps, NavProps, SpanProps } from 'react-html-props';
 
 export type DropdownProps = NavProps;
 export const Dropdown = ({ children }: DropdownProps) => {

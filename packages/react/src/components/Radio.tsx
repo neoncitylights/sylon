@@ -1,4 +1,4 @@
-import { DivProps, InputProps } from 'react-html-props';
+import type { DivProps, InputProps } from 'react-html-props';
 
 export type RadioProps = DivProps & {
 	id: string,

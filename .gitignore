@@ -5,3 +5,4 @@ dist
 .history
 .idea
 .eslintcache
+examples/**/package-lock.json
