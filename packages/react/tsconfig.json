@@ -26,5 +26,9 @@
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true
-	}
+	},
+	"exclude": [
+		"dist",
+		"*.config.cjs"
+	]
 }
