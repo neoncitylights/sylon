@@ -13,7 +13,7 @@
 		"lint:md": "markdownlint-cli2 '**/*.md' \"#node_modules\"",
 		"lint:md-fix": "npm run lint:md -- --fix",
 		"lint:md-env": "markdownlint-cli2 --version",
-		"prelint:pub": "npm run build",
+		"prelint:pub": "cd packages/react && npm run build",
 		"lint:pub": "publint packages/react",
 		"lint:pub-env": "publint --version"
 	},
