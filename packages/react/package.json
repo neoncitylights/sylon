@@ -48,7 +48,7 @@
 		"@storybook/blocks": "^7.4.5",
 		"@storybook/cli": "^7.4.5",
 		"@storybook/react": "^7.4.5",
-		"@storybook/react-vite": "^7.4.5",
+		"@storybook/react-vite": "^7.5.2",
 		"@storybook/testing-library": "^0.2.1",
 		"@vitejs/plugin-react": "^4.1.0",
 		"@vitest/coverage-v8": "^0.34.6",
