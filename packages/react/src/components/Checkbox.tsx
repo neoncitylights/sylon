@@ -1,13 +1,13 @@
-import { DivProps, InputProps } from 'react-html-props';
+import { type ComponentProps } from 'react';
 
-export type CheckboxProps = DivProps & {
+export type CheckboxProps = ComponentProps<'div'> & {
 	id: string,
 	name: string,
 	label: string,
 	ariaLabel: string,
 	description?: string,
 	ariaDescription?: string,
-	inputProps?: InputProps,
+	inputProps?: ComponentProps<'input'>,
 };
 
 export const Checkbox = ({

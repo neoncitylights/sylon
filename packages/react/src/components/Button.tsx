@@ -1,11 +1,10 @@
-import { ReactNode, useState } from 'react';
-import { ButtonProps as HtmlButtonProps } from 'react-html-props';
+import { type ComponentProps, type ReactNode, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export type ButtonKind = NonNullable<ButtonProps['kind']>;
 export type ButtonIntent = NonNullable<ButtonProps['intent']>;
 export type ButtonSize = NonNullable<ButtonProps['size']>;
-export type ButtonProps = HtmlButtonProps & {
+export type ButtonProps = ComponentProps<'button'> & {
 	kind?: 'primary' | 'normal' | 'quiet',
 	intent?: 'progressive' | 'destructive' | 'default',
 	size?: 'sm' | 'md',
