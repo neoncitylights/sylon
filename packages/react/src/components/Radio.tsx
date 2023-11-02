@@ -1,13 +1,13 @@
-import { DivProps, InputProps } from 'react-html-props';
+import { ComponentProps } from 'react';
 
-export type RadioProps = DivProps & {
+export type RadioProps = ComponentProps<'div'> & {
 	id: string,
 	name: string,
 	label: string,
 	ariaLabel: string,
 	description?: string,
 	ariaDescription?: string,
-	inputProps?: InputProps,
+	inputProps?: ComponentProps<'input'>,
 };
 
 export const Radio = ({
