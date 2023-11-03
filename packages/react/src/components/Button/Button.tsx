@@ -1,4 +1,4 @@
-import { type ComponentProps, type ReactNode, useState } from 'react';
+import { type ComponentProps } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export type ButtonKind = NonNullable<ButtonProps['kind']>;
@@ -79,37 +79,5 @@ export const Button = ({
 		<button type="button" className={styles} {...props}>
 			{children}
 		</button>
-	);
-};
-
-export type IconButtonProps = Omit<ButtonProps, 'isIconOnly'> & {
-	'aria-label': string,
-};
-export const IconButton = ({ children, ...props }: IconButtonProps) => {
-	return (
-		<Button isIconOnly {...props}>
-			{children}
-		</Button>
-	);
-};
-
-export type ToggleButtonProps = Omit<ButtonProps, 'children'> & {
-	contentOn: ReactNode,
-	contentOff: ReactNode,
-};
-export const ToggleButton = ({ contentOn, contentOff, ...props }: ToggleButtonProps) => {
-	const [selected, setSelected] = useState(true);
-
-	return (
-		<Button
-			role='checkbox'
-			aria-checked={selected}
-			onClick={() => setSelected(selected => !selected)}
-			{...props}
-		>
-			{selected
-				? contentOn
-				: contentOff}
-		</Button>
 	);
 };
