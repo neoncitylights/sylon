@@ -50,9 +50,9 @@
 		"prefix": "react-c",
 		"description": "Create scaffolding for a single React component",
 		"body": [
-			"import { $2 } from 'react-html-props';",
+			"import { type ComponentProps<'$3'> } from 'react';",
 			"",
-			"export type $1Props = $2 & {}",
+			"export type $1Props = ComponentProps<'$3'> & {}",
 			"export const $1 = ({...props}: $2) => {",
 			"\treturn (<$3 {...props}></$3>)",
 			"}"

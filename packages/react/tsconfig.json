@@ -28,6 +28,7 @@
 		"forceConsistentCasingInFileNames": true
 	},
 	"exclude": [
+		"node_modules",
 		"dist",
 		"*.config.cjs"
 	]
