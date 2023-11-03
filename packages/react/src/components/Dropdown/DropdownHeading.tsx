@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import { ComponentProps } from 'react';
 
 export type DropdownHeadingProps = ComponentProps<'h2'>;
 export const DropdownHeading = ({ children }: DropdownHeadingProps) => {

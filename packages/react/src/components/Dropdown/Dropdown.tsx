@@ -1,4 +1,5 @@
 import { type ComponentProps } from 'react';
+
 import { DropdownHeading } from './DropdownHeading';
 
 export type DropdownProps = ComponentProps<'nav'>;
