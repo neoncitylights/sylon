@@ -23,7 +23,7 @@ const config: StorybookConfig = {
 		}
 	],
 	framework: {
-		name: "@storybook/react-vite",
+		name: getAbsolutePath("@storybook/react-vite"),
 		options: {},
 	},
 	docs: {
