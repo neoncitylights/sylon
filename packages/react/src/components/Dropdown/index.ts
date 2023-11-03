@@ -1,8 +1,8 @@
 export type { DropdownProps } from './Dropdown';
-export type { DropdownItemProps } from './Dropdown';
-export type { DropdownItemKbdProps } from './Dropdown';
-export type { DropdownHeadingProps } from './Dropdown';
 export { Dropdown } from './Dropdown';
-export { DropdownHeading } from './Dropdown';
-export { DropdownItem } from './Dropdown';
-export { DropdownItemKbd } from './Dropdown';
+export type { DropdownHeadingProps } from './DropdownHeading';
+export { DropdownHeading } from './DropdownHeading';
+export type { DropdownItemProps } from './DropdownItem';
+export { DropdownItem } from './DropdownItem';
+export type { DropdownItemKbdProps } from './DropdownItemKbd';
+export { DropdownItemKbd } from './DropdownItemKbd';
