@@ -35,7 +35,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - tool: ESint
+          - tool: ESLint
             npm-cmd-suffix: es
             npm-cmd-env: |
               npm run lint:es-env
