@@ -93,18 +93,7 @@ jobs:
 
   ci-success:
     runs-on: ubuntu-latest
-    if: ${{ success() && github.event_name == 'push' }}
-    needs:
-      - build
-      - lint
-      - pkg-is-publishable
-    steps:
-      - name: ✅ CI succeeded
-        run: exit 0
-
-  ci-success-pr:
-    runs-on: ubuntu-latest
-    if: ${{ success() && github.event_name == 'pull_request' }}
+    if: ${{ success() }}
     needs:
       - build
       - lint
