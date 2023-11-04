@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: build (Node v@${{ matrix.node-version }})
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -34,11 +35,11 @@ jobs:
     strategy:
       matrix:
         include:
-          - tool: eslint
+          - tool: ESLint
             npm-cmd-suffix: es
             env-cmd: |
               npm run lint:es-env
-          - tool: markdownlint
+          - tool: Markdownlint
             npm-cmd-suffix: md
             env-cmd: |
               node --version
@@ -63,11 +64,11 @@ jobs:
       - name: Print environment info
         run: |
           ${{ matrix.env-cmd }}
-      - name: Lint
+      - name: Lint with ${{ matrix.tool }}
         run: npm run lint:${{ matrix.npm-cmd-suffix }}
 
-  pkg-is-publishable:
-    name: pkg-is-publishable (${{ matrix.package }})
+  pkg-dry-run:
+    name: pkg-dry-run (${{ matrix.package }})
     runs-on: ubuntu-latest
     needs: build
     strategy:
@@ -97,7 +98,7 @@ jobs:
     needs:
       - build
       - lint
-      - pkg-is-publishable
+      - pkg-dry-run
     steps:
       - name: ✅ CI succeeded
         run: exit 0
@@ -108,7 +109,7 @@ jobs:
     needs:
       - build
       - lint
-      - pkg-is-publishable
+      - pkg-dry-run
     steps:
       - name: ✅ CI succeeded
         run: exit 0
