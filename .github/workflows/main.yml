@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: build (Node v@${{ matrix.node-version }})
     runs-on: ubuntu-latest
     strategy:
       matrix:
