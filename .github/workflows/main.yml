@@ -35,17 +35,17 @@ jobs:
     strategy:
       matrix:
         include:
-          - tool: eslint
+          - tool: ESint
             npm-cmd-suffix: es
             npm-cmd-env: |
               npm run lint:es-env
-          - tool: markdownlint
+          - tool: Markdownlint
             npm-cmd-suffix: md
             npm-cmd-env: |
               node --version
               npm --version
               npm run lint:md-env
-          - tool: publint
+          - tool: Publint
             npm-cmd-suffix: pub
             npm-cmd-env: |
               node --version
