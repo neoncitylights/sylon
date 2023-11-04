@@ -8,6 +8,7 @@ export default defineConfig({
 		lib: {
 			entry: path.resolve(__dirname, 'src/index.ts'),
 			name: 'sylon',
+			formats: ['es'],
 			fileName: (format) => `sylon.${format}.js`,
 		},
 	},

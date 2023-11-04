@@ -10,13 +10,13 @@
 	},
 	"type": "module",
 	"module": "dist/sylon.es.js",
-	"types": "dist/src/index.d.ts",
+	"types": "dist/index.d.ts",
 	"files": [
 		"dist"
 	],
 	"exports": {
 		".": {
-			"types": "./dist/src/index.d.ts",
+			"types": "./dist/index.d.ts",
 			"import": "./dist/sylon.es.js"
 		}
 	},
