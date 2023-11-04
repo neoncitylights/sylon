@@ -35,19 +35,19 @@ jobs:
     strategy:
       matrix:
         include:
-          - tool: ESLint
+          - tool: eslint
             npm-cmd-suffix: es
-            env-cmd: |
+            npm-cmd-env: |
               npm run lint:es-env
-          - tool: Markdownlint
+          - tool: markdownlint
             npm-cmd-suffix: md
-            env-cmd: |
+            npm-cmd-env: |
               node --version
               npm --version
               npm run lint:md-env
           - tool: publint
             npm-cmd-suffix: pub
-            env-cmd: |
+            npm-cmd-env: |
               node --version
               npm --version
               npm run lint:pub-env
@@ -63,7 +63,7 @@ jobs:
         run: npm ci
       - name: Print environment info
         run: |
-          ${{ matrix.env-cmd }}
+          ${{ matrix.npm-cmd-env }}
       - name: Lint with ${{ matrix.tool }}
         run: npm run lint:${{ matrix.npm-cmd-suffix }}
 
