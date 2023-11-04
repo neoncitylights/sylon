@@ -45,7 +45,7 @@ jobs:
               node --version
               npm --version
               npm run lint:md-env
-          - tool: Publint
+          - tool: publint
             npm-cmd-suffix: pub
             npm-cmd-env: |
               node --version
