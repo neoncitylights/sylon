@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"jsx": "react-jsx",
 		"module": "ES2022",
-		"moduleResolution": "node",
+		"moduleResolution": "Bundler",
 		"target": "ES2022",
 		"useDefineForClassFields": true,
 		"resolveJsonModule": false,
@@ -33,6 +33,7 @@
 	"exclude": [
 		"node_modules",
 		"dist",
-		"*.config.cjs"
+		"*.config.cjs",
+		"src/**/*.stories.*"
 	]
 }
