@@ -1,5 +1,6 @@
+import path from 'node:path';
+
 import react from '@vitejs/plugin-react';
-import path from 'path';
 import tailwindPlugin from 'tailwindcss';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
