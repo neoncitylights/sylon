@@ -6,8 +6,11 @@ import tsConfig from './../tsconfig.json';
 import viteConfig from './../vite.config.ts';
 
 describe('TypeScript config', () => {
-	test('assert moduleResolution is "Bundler"', () => {
-		expect(tsConfig.compilerOptions.moduleResolution).toBe('Bundler');
+	test('assert module resolution is setup for bundler"', () => {
+		const { compilerOptions } = tsConfig;
+		expect(compilerOptions.moduleResolution).toBe('Bundler');
+		expect(compilerOptions.module).toBe('ES2022');
+		expect(compilerOptions.noEmit).toBe(true);
 	});
 
 	test('assert Storybook files are not compiled', () => {
@@ -16,10 +19,18 @@ describe('TypeScript config', () => {
 
 	test('assert JSX construct uses React 17 transform', () => {
 		expect(tsConfig.compilerOptions.jsx).toBe('react-jsx');
-	})
-})
+	});
 
-describe("Vite config", () => {
+	test.each([
+		['ES2022'],
+		['DOM'],
+		['DOM.Iterable'],
+	])('type definitions for built-in JS APIS includes %s', (libType) => {
+		expect(tsConfig.compilerOptions.lib).toContain(libType);
+	});
+});
+
+describe('Vite config', () => {
 	test('assert compiler output is ESM', () => {
 		const lib = viteConfig.build?.lib as LibraryOptions;
 		expect(lib.formats).toContain('es');
@@ -57,4 +68,4 @@ describe("Vite config", () => {
 		expect(globals).toHaveProperty(dep);
 		expect(globals?.[dep]).toBe(global);
 	});
-})
+});
