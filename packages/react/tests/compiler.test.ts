@@ -14,17 +14,17 @@ describe('TypeScript config', () => {
 		expect(tsConfig.exclude).toContain('src/**/*.stories.*');
 	});
 
-	test('assert compiler output is ESM', () => {
-		const lib = viteConfig.build?.lib as LibraryOptions;
-		expect(lib.formats).toContain('es');
-	});
-
 	test('assert JSX construct uses React 17 transform', () => {
 		expect(tsConfig.compilerOptions.jsx).toBe('react-jsx');
 	})
 })
 
 describe("Vite config", () => {
+	test('assert compiler output is ESM', () => {
+		const lib = viteConfig.build?.lib as LibraryOptions;
+		expect(lib.formats).toContain('es');
+	});
+
 	test.each([
 		['tailwindcss'],
 		['react'],
