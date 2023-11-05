@@ -15,7 +15,7 @@ describe('TypeScript config', () => {
 			['noEmit', true],
 		])('assert %s is set to %s', (prop, value) => {
 			expect(compilerOptions[prop]).toBe(value);
-		})
+		});
 	});
 
 	test('assert Storybook files are not compiled', () => {
