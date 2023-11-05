@@ -1,9 +1,10 @@
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import tailwindPlugin from 'tailwindcss';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+
 import { peerDependencies } from './package.json';
-import tailwindPlugin from 'tailwindcss';
 
 export default defineConfig({
 	build: {
@@ -16,22 +17,22 @@ export default defineConfig({
 		rollupOptions: {
 			external: [
 				...Object.keys(peerDependencies),
-				"react/jsx-runtime",
+				'react/jsx-runtime',
 				'tailwindcss',
 			],
 			output: {
 				globals: {
 					react: 'React',
 					'tailwindcss': 'tailwindcss',
-				}
-			}
+				},
+			},
 		},
 	},
 	css: {
 		postcss: {
 			plugins: [
 				tailwindPlugin(),
-			]
+			],
 		},
 	},
 	plugins: [
