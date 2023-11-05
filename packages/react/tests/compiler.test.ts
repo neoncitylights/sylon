@@ -6,20 +6,24 @@ import tsConfig from './../tsconfig.json';
 import viteConfig from './../vite.config.ts';
 
 describe('TypeScript config', () => {
-	describe('assert TS compiler setup for Vite is correct"', () => {
+	describe('assert TS compiler setup for Vite is correct', () => {
 		const { compilerOptions } = tsConfig;
 
 		test.each([
 			['moduleResolution', 'Bundler'],
 			['module', 'ESNext'],
 			['noEmit', true],
-		])('assert %s is set to %s', (prop, value) => {
-			expect(compilerOptions[prop]).toBe(value);
+		])('assert %s is set to %s', (key, value) => {
+			expect(compilerOptions[key]).toBe(value);
 		});
 	});
 
-	test('assert Storybook files are not compiled', () => {
-		expect(tsConfig.exclude).toContain('src/**/*.stories.*');
+	test.each([
+		['src/**/*.stories.*', 'Storybook'],
+		['node_modules', 'Node modules'],
+		['dist', 'Compiled output'],
+	])('assert "%s" directory (%s) is not compiled', (directory) => {
+		expect(tsConfig.exclude).toContain(directory);
 	});
 
 	test('assert JSX construct uses React 17 transform', () => {
@@ -46,7 +50,7 @@ describe('Vite config', () => {
 		['react'],
 		['react-dom'],
 		['react/jsx-runtime'],
-	])('assert peer dependency "%s" is excluded', async (dependency) => {
+	])('assert peer dependency "%s" is excluded', (dependency) => {
 		const { build } = viteConfig;
 		const externalDeps = build?.rollupOptions?.external;
 
@@ -60,7 +64,7 @@ describe('Vite config', () => {
 	test.each([
 		['react', 'React'],
 		['tailwindcss', 'tailwindcss'],
-	])('assert "%s" is setup as global with Rollup', async (dep, global) => {
+	])('assert "%s" is setup as global with Rollup', (dependency, global) => {
 		const { build } = viteConfig;
 		const output = build?.rollupOptions?.output as OutputOptions;
 		const globals = output?.globals;
@@ -70,7 +74,7 @@ describe('Vite config', () => {
 		assertType<Record<string, string>>(globals as any);
 
 		// look at each key-value pair
-		expect(globals).toHaveProperty(dep);
-		expect(globals?.[dep]).toBe(global);
+		expect(globals).toHaveProperty(dependency);
+		expect(globals?.[dependency]).toBe(global);
 	});
 });
