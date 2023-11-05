@@ -6,11 +6,16 @@ import tsConfig from './../tsconfig.json';
 import viteConfig from './../vite.config.ts';
 
 describe('TypeScript config', () => {
-	test('assert module resolution is setup for bundler"', () => {
+	describe('assert TS compiler setup for Vite is correct"', () => {
 		const { compilerOptions } = tsConfig;
-		expect(compilerOptions.moduleResolution).toBe('Bundler');
-		expect(compilerOptions.module).toBe('ES2022');
-		expect(compilerOptions.noEmit).toBe(true);
+
+		test.each([
+			['moduleResolution', 'Bundler'],
+			['module', 'ESNext'],
+			['noEmit', true],
+		])('assert %s is set to %s', (prop, value) => {
+			expect(compilerOptions[prop]).toBe(value);
+		})
 	});
 
 	test('assert Storybook files are not compiled', () => {
