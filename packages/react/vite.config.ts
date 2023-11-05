@@ -2,7 +2,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import { peerDependencies } from './package.json' assert { type: "json" };
+import { peerDependencies } from './package.json';
 import tailwindPlugin from 'tailwindcss';
 
 export default defineConfig({
