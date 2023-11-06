@@ -1,3 +1,5 @@
+import { resolve } from 'node:path';
+
 import { ExternalOption, OutputOptions } from 'rollup';
 import { LibraryOptions } from 'vite';
 import { assertType, describe, expect, test } from 'vitest';
@@ -7,16 +9,28 @@ import tsConfig from './../tsconfig.json';
 import viteConfig from './../vite.config.ts';
 
 describe('package.json', () => {
+	const exports = packageJson.exports['.'];
+
 	test('assert ESM support', () => {
 		expect(packageJson.type).toBe('module');
 
 		expect(packageJson['main']).toBeUndefined();
 		expect(packageJson.module).toBeDefined();
 
-		const exports = packageJson.exports['.'];
 		expect(exports).toBeDefined();
-		expect(exports.types).toEqual(packageJson.types);
-		expect(exports.import).toEqual(packageJson.module);
+	});
+
+	test.each([
+		[
+			packageJson.types, 'types',
+			exports.types, 'exports.[.].types',
+		],
+		[
+			packageJson.module, 'module',
+			exports.import, 'exports.[.].import',
+		],
+	])('assert filepaths %s (%s) and %s (%s) are consistent', (path1, _key1, path2, _key2) => {
+		expect(resolve(path1)).toEqual(resolve(path2));
 	});
 
 	test('assert peer dependencies', () => {
