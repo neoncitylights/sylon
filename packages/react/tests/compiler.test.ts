@@ -2,8 +2,29 @@ import { ExternalOption, OutputOptions } from 'rollup';
 import { LibraryOptions } from 'vite';
 import { assertType, describe, expect, test } from 'vitest';
 
+import packageJson from './../package.json';
 import tsConfig from './../tsconfig.json';
 import viteConfig from './../vite.config.ts';
+
+describe('package.json', () => {
+	test('assert ESM support', () => {
+		expect(packageJson.type).toBe('module');
+
+		expect(packageJson['main']).toBeUndefined();
+		expect(packageJson.module).toBeDefined();
+
+		const exports = packageJson.exports['.'];
+		expect(exports).toBeDefined();
+		expect(exports.types).toEqual(packageJson.types);
+		expect(exports.import).toEqual(packageJson.module);
+	});
+
+	test('assert peer dependencies', () => {
+		const peerDeps = Object.keys(packageJson.peerDependencies);
+		expect(peerDeps).toContain('react');
+		expect(peerDeps).toContain('react-dom');
+	});
+});
 
 describe('TypeScript config', () => {
 	describe('assert TS compiler setup for Vite is correct', () => {
@@ -54,7 +75,7 @@ describe('Vite config', () => {
 		const { build } = viteConfig;
 		const externalDeps = build?.rollupOptions?.external;
 
-		expect(build?.rollupOptions?.external).not.toBeUndefined();
+		expect(build?.rollupOptions?.external).toBeDefined();
 		expect(build?.rollupOptions?.external).not.toBe([]);
 		assertType<ExternalOption[]>(externalDeps as any);
 
@@ -69,7 +90,7 @@ describe('Vite config', () => {
 		const output = build?.rollupOptions?.output as OutputOptions;
 		const globals = output?.globals;
 
-		expect(globals).not.toBeUndefined();
+		expect(globals).toBeDefined();
 		expect(globals).not.toBe({});
 		assertType<Record<string, string>>(globals as any);
 

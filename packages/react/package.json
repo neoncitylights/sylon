@@ -9,8 +9,8 @@
 		"url": "https://github.com/neoncitylights"
 	},
 	"type": "module",
-	"module": "dist/sylon.es.js",
-	"types": "dist/index.d.ts",
+	"module": "./dist/sylon.es.js",
+	"types": "./dist/index.d.ts",
 	"files": [
 		"dist"
 	],
