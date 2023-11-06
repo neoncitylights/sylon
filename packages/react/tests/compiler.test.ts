@@ -10,6 +10,7 @@ import viteConfig from './../vite.config.ts';
 
 describe('package.json', () => {
 	const exports = packageJson.exports['.'];
+	const peerDeps = Object.keys(packageJson.peerDependencies);
 
 	test('assert ESM support', () => {
 		expect(packageJson.type).toBe('module');
@@ -33,10 +34,11 @@ describe('package.json', () => {
 		expect(resolve(path1)).toEqual(resolve(path2));
 	});
 
-	test('assert peer dependencies', () => {
-		const peerDeps = Object.keys(packageJson.peerDependencies);
-		expect(peerDeps).toContain('react');
-		expect(peerDeps).toContain('react-dom');
+	test.each([
+		['react'],
+		['react-dom'],
+	])('assert peer dependencies contains %s', (peerDep) => {
+		expect(peerDeps).toContain(peerDep);
 	});
 });
 
@@ -85,8 +87,8 @@ describe('Vite config', () => {
 		const externalDeps = build?.rollupOptions?.external;
 
 		test('exists at build.rollupOptions.external', () => {
-			expect(build?.rollupOptions?.external).toBeDefined();
-			expect(build?.rollupOptions?.external).not.toBe([]);
+			expect(externalDeps).toBeDefined();
+			expect(externalDeps).not.toBe([]);
 			assertType<ExternalOption[]>(externalDeps as any);
 		});
 
