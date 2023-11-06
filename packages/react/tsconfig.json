@@ -35,7 +35,7 @@
 	"exclude": [
 		"node_modules",
 		"dist",
-		"*.config.cjs",
+		"*.config.mjs",
 		"src/**/*.stories.*"
 	]
 }
