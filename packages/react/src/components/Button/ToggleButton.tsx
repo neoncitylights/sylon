@@ -1,5 +1,3 @@
-'use client';
-
 import { type ReactNode, useState } from 'react';
 
 import { Button, type ButtonProps } from './Button';
@@ -13,8 +11,7 @@ export const ToggleButton = ({ contentOn, contentOff, ...props }: ToggleButtonPr
 
 	return (
 		<Button
-			role='checkbox'
-			aria-checked={selected}
+			aria-pressed={selected}
 			onClick={() => setSelected(selected => !selected)}
 			{...props}
 		>

@@ -1,11 +1,13 @@
 {
 	"compilerOptions": {
 		"jsx": "react-jsx",
-		"module": "ES2022",
-		"moduleResolution": "node",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"noEmit": true,
 		"target": "ES2022",
 		"useDefineForClassFields": true,
 		"resolveJsonModule": false,
+		"lib": ["ES2022", "DOM", "DOM.Iterable"],
 
 		"strict": true,
 		"allowUnusedLabels": false,
@@ -27,10 +29,13 @@
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true
 	},
+	"include": [
+		"src"
+	],
 	"exclude": [
 		"node_modules",
 		"dist",
-		"*.config.cjs",
-		"*.config.mjs"
+		"*.config.mjs",
+		"src/**/*.stories.*"
 	]
 }
