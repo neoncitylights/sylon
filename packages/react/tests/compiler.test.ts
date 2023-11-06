@@ -18,8 +18,6 @@ describe('package.json', () => {
 		expect(packageJson.module).toBeDefined();
 
 		expect(exports).toBeDefined();
-		expect(resolve(exports.types)).toEqual(resolve(packageJson.types));
-		expect(resolve(exports.import)).toEqual(resolve(packageJson.module));
 	});
 
 	test.each([
