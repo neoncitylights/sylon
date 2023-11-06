@@ -80,36 +80,43 @@ describe('Vite config', () => {
 		expect(lib.formats).toContain('es');
 	});
 
-	test.each([
-		['tailwindcss'],
-		['react'],
-		['react-dom'],
-		['react/jsx-runtime'],
-	])('assert peer dependency "%s" is excluded', (dependency) => {
+	describe('peer dependencies', () => {
 		const { build } = viteConfig;
 		const externalDeps = build?.rollupOptions?.external;
 
-		expect(build?.rollupOptions?.external).toBeDefined();
-		expect(build?.rollupOptions?.external).not.toBe([]);
-		assertType<ExternalOption[]>(externalDeps as any);
+		test('exists at build.rollupOptions.external', () => {
+			expect(build?.rollupOptions?.external).toBeDefined();
+			expect(build?.rollupOptions?.external).not.toBe([]);
+			assertType<ExternalOption[]>(externalDeps as any);
+		});
 
-		expect(externalDeps).toContain(dependency);
+		test.each([
+			['tailwindcss'],
+			['react'],
+			['react-dom'],
+			['react/jsx-runtime'],
+		])('assert peer dependency "%s" is excluded', (dependency) => {
+			expect(externalDeps).toContain(dependency);
+		});
 	});
 
-	test.each([
-		['react', 'React'],
-		['tailwindcss', 'tailwindcss'],
-	])('assert "%s" is setup as global with Rollup', (dependency, global) => {
+	describe('globals', () => {
 		const { build } = viteConfig;
 		const output = build?.rollupOptions?.output as OutputOptions;
 		const globals = output?.globals;
 
-		expect(globals).toBeDefined();
-		expect(globals).not.toBe({});
-		assertType<Record<string, string>>(globals as any);
+		test('exists at build.rollupOptions.output.globals', () => {
+			expect(globals).toBeDefined();
+			expect(globals).not.toBe({});
+			assertType<Record<string, string>>(globals as any);
+		});
 
-		// look at each key-value pair
-		expect(globals).toHaveProperty(dependency);
-		expect(globals?.[dependency]).toBe(global);
+		test.each([
+			['react', 'React'],
+			['tailwindcss', 'tailwindcss'],
+		])('assert "%s" is setup as global with Rollup', (dependency, global) => {
+			expect(globals).toHaveProperty(dependency);
+			expect(globals?.[dependency]).toBe(global);
+		});
 	});
 });
