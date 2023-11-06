@@ -88,7 +88,7 @@ describe('Vite config', () => {
 			expect(build?.rollupOptions?.external).toBeDefined();
 			expect(build?.rollupOptions?.external).not.toBe([]);
 			assertType<ExternalOption[]>(externalDeps as any);
-		})
+		});
 
 		test.each([
 			['tailwindcss'],
