@@ -2,9 +2,9 @@ import { ExternalOption, OutputOptions } from 'rollup';
 import { LibraryOptions } from 'vite';
 import { assertType, describe, expect, test } from 'vitest';
 
+import packageJson from './../package.json';
 import tsConfig from './../tsconfig.json';
 import viteConfig from './../vite.config.ts';
-import packageJson from './../package.json';
 
 describe('package.json', () => {
 	test('assert ESM support', () => {
@@ -13,18 +13,18 @@ describe('package.json', () => {
 		expect(packageJson['main']).toBeUndefined();
 		expect(packageJson.module).toBeDefined();
 
-		let exports = packageJson.exports['.'];
+		const exports = packageJson.exports['.'];
 		expect(exports).toBeDefined();
 		expect(exports.types).toEqual(packageJson.types);
 		expect(exports.import).toEqual(packageJson.module);
-	})
+	});
 
 	test('assert peer dependencies', () => {
 		const peerDeps = Object.keys(packageJson.peerDependencies);
 		expect(peerDeps).toContain('react');
 		expect(peerDeps).toContain('react-dom');
-	})
-})
+	});
+});
 
 describe('TypeScript config', () => {
 	describe('assert TS compiler setup for Vite is correct', () => {
