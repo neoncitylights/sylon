@@ -84,7 +84,7 @@ describe('Vite config', () => {
 		const { build } = viteConfig;
 		const externalDeps = build?.rollupOptions?.external;
 
-		test('exists in Vite config at build.rollupOptions.external', () => {
+		test('exists at build.rollupOptions.external', () => {
 			expect(build?.rollupOptions?.external).toBeDefined();
 			expect(build?.rollupOptions?.external).not.toBe([]);
 			assertType<ExternalOption[]>(externalDeps as any);
@@ -105,7 +105,7 @@ describe('Vite config', () => {
 		const output = build?.rollupOptions?.output as OutputOptions;
 		const globals = output?.globals;
 
-		test('exists in Vite config at build.rollupOptions.output.globals', () => {
+		test('exists at build.rollupOptions.output.globals', () => {
 			expect(globals).toBeDefined();
 			expect(globals).not.toBe({});
 			assertType<Record<string, string>>(globals as any);
