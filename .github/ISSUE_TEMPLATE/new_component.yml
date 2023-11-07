@@ -1,0 +1,20 @@
+name: New Component
+description: Suggest a new web component
+title: "component: "
+labels: ["t-feature", "rm-unknown"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request!
+  - type: textarea
+    attributes:
+      label: Relevant ARIA attributes and roles
+      description: |
+        Please list any relevant ARIA attributes and roles that should be considered when implementing this component.
+        These can be links to MDN, or directly from the W3C WCAG specification.
+  - type: textarea
+    attributes:
+      label: API and examples
+      description: |
+        Please write some example code of how this component could be used.
