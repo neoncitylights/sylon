@@ -18,8 +18,8 @@
 		"lint:pub-env": "publint --version"
 	},
 	"devDependencies": {
-		"@vitest/coverage-v8": "^1.0.1",
-		"@vitest/ui": "^1.0.1",
+		"@vitest/coverage-v8": "^1.0.4",
+		"@vitest/ui": "^1.0.4",
 		"eslint": "8.55.0",
 		"eslint-config-neoncitylights": "^0.3.0",
 		"gh-pages": "6.1.0",
@@ -28,8 +28,8 @@
 		"publint": "^0.2.6",
 		"turbo": "^1.10.16",
 		"typescript": "5.3.2",
-		"vite": "^5.0.5",
+		"vite": "^5.0.7",
 		"vite-plugin-dts": "^3.6.4",
-		"vitest": "^1.0.1"
+		"vitest": "^1.0.4"
 	}
 }
