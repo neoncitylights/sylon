@@ -18,6 +18,7 @@
 		"lint:pub-env": "publint --version"
 	},
 	"devDependencies": {
+		"@vitejs/plugin-react": "^4.2.0",
 		"@vitest/coverage-v8": "^1.0.4",
 		"@vitest/ui": "^1.0.4",
 		"eslint": "8.55.0",
