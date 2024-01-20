@@ -9,17 +9,17 @@
 		"url": "https://github.com/neoncitylights"
 	},
 	"type": "module",
-	"module": "./dist/sylon.es.js",
 	"types": "./dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"module": "./dist/sylon.mjs",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"import": "./dist/sylon.es.js"
+			"import": "./dist/sylon.mjs"
 		}
 	},
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "vite build",
 		"storybook": "storybook dev -p 6006",
@@ -28,7 +28,10 @@
 		"test": "vitest --coverage",
 		"test:ci": "npm run test -- run",
 		"test:ui": "npm run test -- --ui",
-		"test:watch": "npm run test -- --watch"
+		"test:watch": "npm run test -- --watch",
+		"prepublint": "npm run build",
+		"publint": "publint",
+		"prepublishOnly": "npm run publint && npm run test"
 	},
 	"dependencies": {
 		"@tabler/icons-react": "^2.41.0",

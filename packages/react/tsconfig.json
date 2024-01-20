@@ -1,41 +1,16 @@
 {
-	"compilerOptions": {
-		"jsx": "react-jsx",
-		"module": "ESNext",
-		"moduleResolution": "Bundler",
-		"noEmit": true,
-		"target": "ES2022",
-		"useDefineForClassFields": true,
-		"resolveJsonModule": false,
-		"lib": ["ES2022", "DOM", "DOM.Iterable"],
-
-		"strict": true,
-		"allowUnusedLabels": false,
-		"allowUnreachableCode": false,
-		"exactOptionalPropertyTypes": true,
-		"noFallthroughCasesInSwitch": true,
-		"noImplicitOverride": true,
-		"noImplicitReturns": true,
-		"noPropertyAccessFromIndexSignature": true,
-		"noUncheckedIndexedAccess": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-
-		"isolatedModules": true,
-
-		"checkJs": true,
-
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true
-	},
+	"extends": "./../../tsconfig.base.json",
 	"include": [
-		"src"
+		"src/**/*.ts"
 	],
 	"exclude": [
 		"node_modules",
-		"dist",
-		"*.config.cjs",
-		"src/**/*.stories.*"
-	]
+		"**/tests/*",
+		"**/__tests__/*"
+	],
+	"typedocOptions": {
+		"entryPoints": [
+			"src/index.ts"
+		]
+	}
 }
