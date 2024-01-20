@@ -4,8 +4,8 @@ import { ExternalOption, OutputOptions } from 'rollup';
 import { LibraryOptions } from 'vite';
 import { assertType, describe, expect, test } from 'vitest';
 
+import tsConfig from './../../../tsconfig.base.json';
 import packageJson from './../package.json';
-import tsConfig from './../tsconfig.json';
 import viteConfig from './../vite.config.ts';
 
 describe('package.json', () => {

@@ -12,7 +12,7 @@ export default defineProject({
 		lib: {
 			entry: path.resolve(__dirname, 'src/index.ts'),
 			formats: ['es'],
-			fileName: () => '{{package}}.mjs',
+			fileName: () => 'sylon.mjs',
 		},
 		rollupOptions: {
 			external: [

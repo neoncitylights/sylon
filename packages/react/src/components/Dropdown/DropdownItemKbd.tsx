@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react';
+import type { ComponentProps } from 'react';
 
 export type DropdownItemKbdProps = ComponentProps<'span'>;
 export const DropdownItemKbd = ({ children }: DropdownItemKbdProps) => {

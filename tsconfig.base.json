@@ -1,5 +1,3 @@
-// Handbook: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
-// Reference: https://www.typescriptlang.org/tsconfig
 {
 	"compilerOptions": {
 		"composite": true,
@@ -29,7 +27,7 @@
 		"useDefineForClassFields": true,
 
 		/* transpilation */
-		"lib": [ "ES2022" ],
+		"lib": ["ES2022", "DOM", "DOM.Iterable"],
 		"target": "ES2022",
 		"module": "ESNext",
 		"moduleResolution": "Bundler",
