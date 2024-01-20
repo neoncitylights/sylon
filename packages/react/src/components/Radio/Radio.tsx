@@ -1,4 +1,4 @@
-import { ComponentProps } from 'react';
+import type { ComponentProps } from 'react';
 
 export type RadioProps = ComponentProps<'div'> & {
 	id: string,
